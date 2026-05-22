@@ -254,7 +254,7 @@ def zero_rho_covariance_check(n=100000):
 
     sample_cov = cov_matrix[0, 1]
 
-    return abs(sample_cov) < 0.05
+    return bool(abs(sample_cov) < 0.05)
 
 
 def nonzero_rho_covariance_check(n=100000):
@@ -285,6 +285,6 @@ def nonzero_rho_covariance_check(n=100000):
 
     sample_cov = cov_matrix[0, 1]
 
-    return abs(
+    return bool(abs(
         sample_cov - expected_cov
-    ) < 0.2
+    ) < 0.2)
